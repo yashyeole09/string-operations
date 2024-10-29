@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #006666;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+            margin-top: 25px;
+
+        }
+
+        .btn-container {
+            width: 35%;
+            display: flex;
+            justify-content: space-around;
+            margin: 15px auto;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #66b3ff;
+            color: #000000 border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-top: 20px;
+
+
+        }
+        .btn:hover{
+            background-color: #3399ff;
+            color: white;
+        }
+        @media screen and (max-width: 400px) {
+           .btn-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">String Operations</h1>
+    <input type="text" class="box" id="input" placeholder="Enter a text">
+    <input type="text" class="box" id="output" placeholder="output">
+    <div class="btn-container">
+        <button type="button" class="btn" onclick="convertToUpperCase()">UPPERCASE</button>
+        <button type="button" class="btn" Lowercase onclick="convertToLowercase()">lowercase</button>
+        <button type="button" class="btn" Word count onclick="convertToWordCount()">Word Count</button>
+        <button type="button" class="btn" Character Count onclick="convertToCharactercount()">Character count</button>
+    </div>
+
+    <script>
+        const inputElement = document.getElementById('input');
+        const outputElement = document.getElementById('output');
+
+        function convertToUpperCase() {
+            const inputText = inputElement.value;
+            outputElement.value = inputText.toUpperCase();
+
+        }
+        function convertToLowercase() {
+            const inputText = inputElement.value;
+            outputElement.value = inputText.toLowerCase();
+        }
+
+        function convertToWordCount() {
+            const totalwords = inputElement.value.split("$").length;
+            outputElement.value = `word count: ${totalwords}`;
+        }
+
+        function convertToCharacterCount() {
+            const inputText = inputElement.value;
+            outputElement.value = `character count: ${inputText.value.length}`;
+        }
+    </script>
+</body>
+
+</html>
