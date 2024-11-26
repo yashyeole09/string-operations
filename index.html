@@ -51,11 +51,31 @@
             background-color: #3399ff;
             color: white;
         }
-        @media screen and (max-width: 400px) {
-           .btn-container {
-                width: 100%;
+        @media screen and (max-width: 600px) {
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+            }
+
+            .btn {
+                width: 80%;
+                margin: 5px 0;
+            }
+            h1 {
+                font-size: 2rem;
             }
         }
+        @media screen and (max-width: 400px) {
+            .box {
+                width: 90%;
+            }
+
+            .btn {
+                width: 90%;
+            }
+        }
+
     </style>
 </head>
 
@@ -85,13 +105,14 @@
         }
 
         function convertToWordCount() {
-            const totalwords = inputElement.value.split("$").length;
+            const totalwords = inputElement.value.split(" ").length;
             outputElement.value = `word count: ${totalwords}`;
         }
 
-        function convertToCharacterCount() {
-            const inputText = inputElement.value;
-            outputElement.value = `character count: ${inputText.value.length}`;
+        function convertToCharactercount() {
+         const inputText = inputElement.value;
+            outputElement.value = `character count: ${inputText.length}`;
+            
         }
     </script>
 </body>
